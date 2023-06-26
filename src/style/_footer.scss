@@ -1,0 +1,126 @@
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  background-color: #0f0f0f;
+  transition: 0.5s;
+
+  &.more {
+    box-shadow: 0px -5px 15px rgba(214, 159, 114, 0.3);
+    z-index: 1000;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+
+    margin: 15px auto;
+    width: 180px;
+    height: 52px;
+
+    background-color: transparent;
+    color: rgb(214, 159, 114);
+
+    &:hover {
+      border-radius: 10px;
+      background-color: #1c1c1c;
+    }
+
+    img {
+      width: 16px;
+      margin-right: 10px;
+    }
+
+    .loading {
+      display: none;
+      height: 32px;
+      width: 32px;
+      margin: 0 auto;
+      animation: loader1 3s linear infinite;
+    }
+
+    @keyframes loader1 {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loading span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 32px;
+      height: 32px;
+      clip: rect(16px, 32px, 32px, 0);
+      animation: loader2 1.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    }
+
+    @keyframes loader2 {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes loader3 {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loading span::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 32px;
+      height: 32px;
+      border: 2px solid rgb(214, 159, 114);
+      border-radius: 50%;
+    }
+
+    &.show-loader {
+      width: 52px;
+      background-color: transparent;
+      text-indent: -9999px;
+
+      img {
+        display: none;
+      }
+
+      & .loading {
+        display: block;
+      }
+    }
+
+    &.loaded {
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+      transition: visibility 0.3s 3s, opacity 0.3s 3s, height 0.3s 3s;
+    }
+  }
+}
