@@ -3,6 +3,7 @@ import axios from 'axios';
 import createRefreshButton from './components/refreshButton';
 import createLoadMoreButton from './components/loadMoreButton';
 import newWindowFn from './components/newWindowButton';
+import { mapTime } from './services/timeMapper';
 
 import '../style/main.scss';
 
@@ -57,5 +58,5 @@ function createListItem(storiesData) {
 
   storyTitle.innerHTML = storiesData.title;
   storyAuthor.innerHTML = storiesData.by;
-  storyTime.innerHTML = storiesData.time;
+  storyTime.innerHTML = mapTime(storiesData.time);
 }
