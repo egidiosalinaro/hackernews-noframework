@@ -4,11 +4,13 @@ import createRefreshButton from './components/refreshButton';
 import createLoadMoreButton from './components/loadMoreButton';
 import newWindowFn from './components/newWindowButton';
 import { mapTime } from './services/timeMapper';
+import loadMoreButton from './services/loadMoreFunction';
 
 import '../style/main.scss';
 
 createRefreshButton();
 createLoadMoreButton();
+loadMoreButton();
 
 const baseUrl = 'https://hacker-news.firebaseio.com/v0/';
 const newStoriesUrl = `${baseUrl}newstories.json`;
@@ -28,7 +30,6 @@ function extractFromArray(storiesIds) {
   storiesIds.forEach(storyId => {
     axios.get(`${storyUrl}${storyId}.json`).then(storiesDetails => {
       let storiesData = storiesDetails.data;
-      console.log(storiesData);
       createListItem(storiesData);
     });
   });
@@ -45,6 +46,8 @@ function createListItem(storiesData) {
   let storyTime = document.createElement('span');
   let openStory = document.createElement('div');
   let openStoryLink = document.createElement('a');
+  openStoryLink.setAttribute('href', `${storiesData.url}`);
+  openStoryLink.setAttribute('target', '_blank');
 
   document.querySelector('main').appendChild(storyContainer);
   storyContainer.appendChild(storyContent);
