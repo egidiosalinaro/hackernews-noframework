@@ -5,6 +5,7 @@ import createLoadMoreButton from './components/loadMoreButton';
 import newWindowFn from './components/newWindowButton';
 import { mapTime } from './services/timeMapper';
 import loadMoreButton from './services/loadMoreFunction';
+import scrollShadow from './services/scrollShadow';
 
 import '../style/main.scss';
 
@@ -39,6 +40,8 @@ function createListItem(storiesData) {
   let storyContainer = document.createElement('section');
   let storyContent = document.createElement('div');
   let storyTitle = document.createElement('h1');
+  let storyTitleLink = document.createElement('a');
+  storyTitleLink.setAttribute('href', `${storiesData.url}`);
   let storyDetails = document.createElement('div');
   storyDetails.setAttribute('class', 'story-meta');
   let storyAuthor = document.createElement('span');
@@ -54,12 +57,17 @@ function createListItem(storiesData) {
   storyContainer.appendChild(openStory);
   storyContent.appendChild(storyTitle);
   storyContent.appendChild(storyDetails);
+  storyTitle.appendChild(storyTitleLink);
   storyDetails.appendChild(storyAuthor);
   storyDetails.appendChild(storyTime);
   openStory.appendChild(openStoryLink);
   openStoryLink.appendChild(newWindowFn());
 
-  storyTitle.innerHTML = storiesData.title;
+  storyTitleLink.innerHTML = storiesData.title;
   storyAuthor.innerHTML = storiesData.by;
   storyTime.innerHTML = mapTime(storiesData.time);
 }
+
+window.onscroll = () => {
+  scrollShadow();
+};
