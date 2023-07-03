@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import createRefreshButton from './components/refreshButton';
 import createLoadMoreButton from './components/loadMoreButton';
-import createListItem from './services/createItems';
+import createListItem from './components/createItems';
 import loadMoreButton from './services/loadMoreFunction';
 import scrollShadow from './services/scrollShadow';
 

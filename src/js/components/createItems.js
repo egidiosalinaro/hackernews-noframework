@@ -1,5 +1,5 @@
-import newWindowFn from '../components/newWindowButton';
-import { mapTime } from './timeMapper';
+import newWindowFn from './newWindowButton';
+import { mapTime } from '../services/timeMapper';
 
 export default function createListItem(storiesData) {
   let storyContainer = document.createElement('section');
