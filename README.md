@@ -46,7 +46,7 @@
 <br>
 The goal of the project is to deliver an application to democratize the sharing of information in the tech field, through the use of the <strong>Hacker News</strong> service.
   
-At its startup the application displays the list of the latest news available by showing title, link, author and date of the story. Then it contacts APIs of the external Hacker News service to retrieve the list of latest news IDs. For each ID, the application recalls another API of the Hacker News service to obtain the information to be displayed such as the title, link, author and date of the news.
+At its startup the application displays the list of the latest news available by showing title, link, author and date of the story. It contacts APIs of the external Hacker News service to retrieve the list of latest news IDs. For each ID, the application recalls another API of the Hacker News service to obtain the information to be displayed such as the title, link, author and date of the news.
 
 Note: the first API useful to get the list of the latest news (newstories) returns about 500 elements. In order to avoid performance problems, after having retrieved the list of the latest news, the application will show only details of the first 10 news. Through a button `Load more` the application will allow the user to go and view information of the next 10 news.
   
@@ -61,7 +61,7 @@ A golden shadow, developed in `scrollShadow.js`, shows up to inform the user tha
 ### Built With :bricks:
 
 Vanilla JavaScript is basically all I used to bootstrap this project.
-I bundled the app usign Webpack. I used Axios for simpler API calls and Dotenv to recall hidden environment variables (as a studying purpose since HN api are public)
+I bundled the app using Webpack. I used Axios for simpler API calls and Dotenv to recall hidden environment variables (as a studying purpose since HN API's are still public)
 
 <p align="left"><a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> Html5 <br>
 <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/></a> Css3 <br>
@@ -78,14 +78,14 @@ I bundled the app usign Webpack. I used Axios for simpler API calls and Dotenv t
 <!-- GETTING STARTED -->
 ## Getting Started :clapper:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). <br>
-I published this code at the link https://hackernews-api-react-egidiosalinaro.netlify.app/ so you can use it, but if you want you can also install it in your device using React:
+This project was bootstrapped with [Webpack](https://webpack.js.org), [Axios](https://axios-http.com/) and [Dotenv](https://www.npmjs.com/package/dotenv). <br>
+I published this code at the link [https://hackernews-api-react-egidiosalinaro.netlify.app/](https://hn-api-dotenv-vanilla-egidiosalinaro.netlify.app/) so you can use it, but if you want you can also install it in your device using Webpack:
 
 
 ### Prerequisites :pencil:
 
 You need to have Node and npm installed. You can check the version you have installed running:
-* npm
+
   ```sh
   npm -v
   ```
@@ -99,32 +99,44 @@ You need to have Node and npm installed. You can check the version you have inst
 Once downloaded this repo, in the project directory, you can run:
 
 ```sh
-npm start
+npm init -y
 ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Then you will need to
+* install webpack
 
 ```sh
-npm test
+npm i -D webpack webpack-cli
+```
+* initialize the project
+```sh
+npx webpack init
 ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+While answering initialization questions, make sure you select the SASS option for style compiling, since this is how I styled this app.
+
+To use all the code's functionalities you will need to install also Axios (for API calls) and Dotenv (to recall environment variables from a `.env` file) libraries.
+Use these commands in terminal:
+```sh
+npm install axios
+```
+```sh
+npm install dotenv --save
+```
+
+
+
+At this stage you can run
 
 ```sh
 npm run build
 ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+to build the app for production in the `dist` folder, and 
+```sh
+npm run serve
+```
+to see the app in action in your local machine.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,6 +157,7 @@ Golden shadows shows up from the header and the footer to inform the user that t
 
 - [x] call `newstories` API
 - [x] call APIs for each stories' details
+- [x] create `.env` file and insert it in the `.gitignore` list
 - [x] time functions
 - [x] `Load More` button to call 10 new stories
 - [x] styles improvements
