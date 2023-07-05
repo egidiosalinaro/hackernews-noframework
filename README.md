@@ -60,7 +60,7 @@ A golden shadow, developed in `scrollShadow.js`, shows up to inform the user tha
 
 ### Built With :bricks:
 
-Vanilla JavaScript is basically all I used to bootstrap this project.
+JavaScript is basically all I used to bootstrap this project.
 I bundled the app using Webpack. I used Axios for simpler API calls and Dotenv to recall hidden environment variables (as a studying purpose since HN API's are still public)
 
 <p align="left"><a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> Html5 <br>
