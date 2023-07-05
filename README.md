@@ -46,7 +46,7 @@
 <br>
 The goal of the project is to deliver an application to democratize the sharing of information in the tech field, through the use of the <strong>Hacker News</strong> service.
   
-At its startup the application displays the list of the latest news available by showing title, link, author and date of the story. It contacts APIs of the external Hacker News service to retrieve the list of latest news IDs. For each ID, the application recalls another API of the Hacker News service to obtain the information to be displayed such as the title, link, author and date of the news.
+At its startup the application displays the list of the latest news available by showing title, link, author and date of the story. It contacts APIs of the external Hacker News service to retrieve the list of latest news IDs. For each ID, the application recalls another API of the Hacker News service to obtain the information to be displayed such as title, link, author and date of the news.
 
 Note: the first API useful to get the list of the latest news (newstories) returns about 500 elements. In order to avoid performance problems, after having retrieved the list of the latest news, the application will show only details of the first 10 news. Through a button `Load more` the application will allow the user to go and view information of the next 10 news.
   
@@ -84,7 +84,7 @@ I published this code at the link [https://hackernews-api-react-egidiosalinaro.n
 
 ### Prerequisites :pencil:
 
-You need to have Node and npm installed. You can check the version you have installed running:
+You need to have Node and npm installed. You can check the version you have installed by running:
 
   ```sh
   npm -v
