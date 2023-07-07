@@ -61,24 +61,24 @@ A golden shadow, developed in `scrollShadow.js`, shows up to inform the user tha
 ### Built With :bricks:
 
 JavaScript is basically all I used to bootstrap this project.
-I bundled the app using Webpack. I used Axios for simpler API calls and Dotenv to recall hidden environment variables (as a studying purpose since HN API's are still public)
+I bundled the app using Webpack. I used Axios for simpler API calls, Lodash to prevent unreadable properties during API calls, and Dotenv to recall hidden environment variables (as a studying purpose since HN API's are still public)
 
 <p align="left"><a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> Html5 <br>
 <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/></a> Css3 <br>
 <a href="https://sass-lang.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a> Sass <br>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> JavaScript ES6 <br> <br> <br>
 <a href="https://axios-http.com/" target="_blank" rel="noreferrer"> <img src="https://github.com/egidiosalinaro/hackernews-noframework/assets/129901135/e5e56a13-c9e2-48ac-a874-2a0c94dc832f" alt="axios" width="40" height="40"/> </a> Axios</p>
+<a href="https://lodash.com/" target="_blank" rel="noreferrer"> <img src="https://github.com/egidiosalinaro/hackernews-noframework/assets/129901135/6cfc745a-9d1c-4fbe-b4bd-0b04f744923e" alt="lodash" width="40" height="40"/> </a> Lodash</p>
 <a href="https://www.npmjs.com/package/dotenv" target="_blank" rel="noreferrer"> <img src="https://github.com/egidiosalinaro/hackernews-noframework/assets/129901135/8c11269d-5b85-4ac4-aeca-f72770507c1f" alt="axios" width="40" height="40"/> </a> Dotenv</p>
 <a href="https://webpack.js.org" target="_blank" rel="noreferrer"> <img src="https://github.com/egidiosalinaro/hackernews-noframework/assets/129901135/651caf8c-af6c-4b6e-89d0-0af5538bfc5b" alt="webpack" width="40" height="40"/> </a> Webpack <br> 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- GETTING STARTED -->
 ## Getting Started :clapper:
 
-This project was bootstrapped with [Webpack](https://webpack.js.org), [Axios](https://axios-http.com/) and [Dotenv](https://www.npmjs.com/package/dotenv). <br>
+This project was bootstrapped with [Webpack](https://webpack.js.org), [Axios](https://axios-http.com/), [Lodash](https://lodash.com/) and [Dotenv](https://www.npmjs.com/package/dotenv). <br>
 I published this code at the link [https://hackernews-api-react-egidiosalinaro.netlify.app/](https://hn-api-dotenv-vanilla-egidiosalinaro.netlify.app/) so you can use it, but if you want you can also install it in your device using Webpack:
 
 
@@ -115,10 +115,13 @@ npx webpack init
 
 While answering initialization questions, make sure you select the SASS option for style compiling, since this is how I styled this app.
 
-To use all the code's functionalities you will need to install also Axios (for API calls) and Dotenv (to recall environment variables from a `.env` file) libraries.
+To use all the code's functionalities you will need to install also Axios (for API calls), Lodash (with the _.get function to prevent unreadable properties during API calls) and Dotenv (to recall environment variables from a `.env` file) libraries.
 Use these commands in terminal:
 ```sh
 npm install axios
+```
+```sh
+npm i --save lodash
 ```
 ```sh
 npm install dotenv --save
