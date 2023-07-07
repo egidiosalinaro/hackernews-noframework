@@ -6,6 +6,8 @@ import createListItem from './components/createItems';
 import loadMoreButton from './services/loadMoreFunction';
 import scrollShadow from './services/scrollShadow';
 
+const _ = require('lodash');
+
 import '../style/main.scss';
 
 createRefreshButton();
@@ -19,7 +21,7 @@ const storyUrl = `${baseUrl}item/`;
 axios
   .get(newStoriesUrl)
   .then(arrayy500 => {
-    let storiesIds = arrayy500.data;
+    let storiesIds = _.get(arrayy500, 'data', '');
     extractFromArray(storiesIds);
   })
   .catch(function (error) {
@@ -29,7 +31,7 @@ axios
 function extractFromArray(storiesIds) {
   storiesIds.forEach(storyId => {
     axios.get(`${storyUrl}${storyId}.json`).then(storiesDetails => {
-      let storiesData = storiesDetails.data;
+      let storiesData = _.get(storiesDetails, 'data', '');
       createListItem(storiesData);
     });
   });
